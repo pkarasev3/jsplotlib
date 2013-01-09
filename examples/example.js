@@ -1,12 +1,15 @@
 "use strict";
 $(window).load(function () {
 
+    var TheYList = runOtherFunc();
+    var xmax = 300;
+
     // a simple plot with dates on the x-axis
     var chart1 = jsplotlib.make_chart(800,400); // like calling figure()
     jsplotlib.pplot(chart1)
-        .y([3,4,16,15,42,23])
+        .y( TheYList )
         // can use xrange() to specify a range of x values.
-        .xrange(80, 200, 6)
+        .xrange(80, xmax, 6)
         .yaxis_off()
         .title("A graph with no y-axis")
         .draw();
@@ -49,3 +52,5 @@ $(window).load(function () {
         .colormap_jet() // the standard matlab colormap
         .draw();
 });
+
+//};
